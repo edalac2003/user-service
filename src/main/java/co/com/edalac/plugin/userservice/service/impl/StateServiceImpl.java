@@ -28,9 +28,10 @@ public class StateServiceImpl implements GenericService<StateDTO, Long>, StateSe
 
 	@Override
 	public StateDTO findById(Long id) throws UserException {
-		StateEntity entity = repository.findById(id).orElse(StateEntity.builder().build());
-		ModelMapper mapper = new ModelMapper();
-		return mapper.map(entity, StateDTO.class);
+//		StateEntity entity = repository.findById(id).orElse(StateEntity.builder().build());
+//		ModelMapper mapper = new ModelMapper();
+//		return mapper.map(entity, StateDTO.class);
+		return null;
 	}
 
 	@Override

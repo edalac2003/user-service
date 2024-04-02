@@ -1,7 +1,9 @@
 package co.com.edalac.plugin.userservice.model.entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -25,8 +27,12 @@ public class CityEntity {
 	private Long idCity;
 	private String name;
 	private String code;
-	
-	@ManyToOne
-	@JoinColumn(columnDefinition = "state_id")
+
+	@Column(name = "state_id", insertable = false, updatable = false)
+	private Long stateId;
+
+	@ManyToOne(cascade = CascadeType.REFRESH, fetch = FetchType.LAZY)
+	@JoinColumn(name = "state_id")
 	private StateEntity state;
+
 }

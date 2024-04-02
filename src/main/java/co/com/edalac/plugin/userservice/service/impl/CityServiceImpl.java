@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import co.com.edalac.plugin.userservice.model.dto.CityDTO;
+import co.com.edalac.plugin.userservice.model.dto.StateDTO;
 import co.com.edalac.plugin.userservice.model.entity.CityEntity;
 import co.com.edalac.plugin.userservice.repository.CityRepository;
 import co.com.edalac.plugin.userservice.service.GenericService;
@@ -35,11 +36,12 @@ public class CityServiceImpl implements GenericService<CityDTO, Long> {
 
 	@Override
 	public List<CityDTO> findAll() throws UserException {
-		List<CityEntity> states = repository.findAll();
-
-		return states.stream().map(s -> {
+		List<CityEntity> cities = repository.findAll();
+//		ModelMapper mapperState = new ModelMapper();
+		
+		return cities.stream().map(c -> {
 			ModelMapper mapper = new ModelMapper();
-			return mapper.map(s, CityDTO.class);
+			return mapper.map(c, CityDTO.class);
 		}).toList();
 	}
 

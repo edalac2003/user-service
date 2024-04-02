@@ -18,5 +18,6 @@ public class CityDTO extends AbstractResponseDTO {
 	private Long idCity;
 	private String name;
 	private String code;
+	private StateDTO state;
 	
 }
