@@ -1,6 +1,7 @@
 package co.com.edalac.plugin.userservice.model.dto;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 import co.com.edalac.plugin.userservice.model.dto.response.AbstractDTO;
@@ -24,11 +25,11 @@ public class PersonDTO extends AbstractDTO{
 	private LocalDate birthdate;
 	private Boolean status;
 	
-	private CityDTO city;
+	private CityDTO city = new CityDTO();
 	
-	private List<IdentificationPersonDTO> identifications;
+	private List<IdentificationPersonDTO> identifications = new ArrayList<IdentificationPersonDTO>();
 	
-	private List<ContactPersonDTO> contacts;
+	private List<ContactPersonDTO> contacts = new ArrayList<ContactPersonDTO>();
 	
-	private List<AddressPersonDTO> addresses;
+	private List<AddressPersonDTO> addresses = new ArrayList<AddressPersonDTO>();
 }
