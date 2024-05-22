@@ -3,35 +3,28 @@ package co.com.edalac.plugin.userservice.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import co.com.edalac.plugin.userservice.model.dto.CountryDTO;
+import co.com.edalac.plugin.userservice.model.dto.AddressTypeDTO;
 import co.com.edalac.plugin.userservice.model.dto.response.UserResponse;
-import co.com.edalac.plugin.userservice.service.impl.CountryServiceImpl;
+import co.com.edalac.plugin.userservice.service.AddressTypeService;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 
 @RestController
-@RequestMapping("/user/country")
+@RequestMapping("/user/address-type")
 @ApiResponse
-public class CountryController {
+public class AddressTypeController{
 
 	@Autowired
-	private CountryServiceImpl countryServiceImpl;
-	
-	@PostMapping
-	public void create(CountryDTO country) {
-		countryServiceImpl.create(country);
-	}
+	private AddressTypeService service;
 	
 	@GetMapping("findById/{id}")
-	public UserResponse<CountryDTO> getById(@PathVariable Long id) throws Exception{
-		UserResponse<CountryDTO> response = new UserResponse<CountryDTO>();
+	public UserResponse<AddressTypeDTO> findById(Integer id){
+		UserResponse<AddressTypeDTO> response = new UserResponse<AddressTypeDTO>();
 		try {
-			response.setData(countryServiceImpl.findById(id));
-			return  response;
+			response.setData(service.findById(id));
+			return response;
 		}catch (Exception e) {
 			response.setStatusCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
 			response.setMessage(e.getMessage());
@@ -40,10 +33,10 @@ public class CountryController {
 	}
 	
 	@GetMapping("findAll")
-	public UserResponse<CountryDTO> findAll(){
-		UserResponse<CountryDTO> response = new UserResponse<CountryDTO>();
+	public UserResponse<AddressTypeDTO> findAll(){
+		UserResponse<AddressTypeDTO> response = new UserResponse<AddressTypeDTO>();
 		try {
-			response.setList(countryServiceImpl.findAll());
+			response.setList(service.findAll());
 			return response;
 		}catch (Exception e) {
 			response.setStatusCode(HttpStatus.INTERNAL_SERVER_ERROR.value());

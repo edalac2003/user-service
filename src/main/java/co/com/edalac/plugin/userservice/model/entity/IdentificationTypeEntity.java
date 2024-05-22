@@ -23,6 +23,8 @@ public class IdentificationTypeEntity {
 	private Integer id;
 	private String name;
 	private String abbreviation;
+	
+	@Column(name = "is_active")
 	private Boolean active;
 	
 }

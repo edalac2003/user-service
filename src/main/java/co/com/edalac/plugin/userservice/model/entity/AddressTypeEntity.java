@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name = "address_type")
+@Table(name = "address_type_master")
 @AllArgsConstructor
 @NoArgsConstructor
 public class AddressTypeEntity {
@@ -22,5 +22,7 @@ public class AddressTypeEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String name;
+	
+	@Column(name = "is_active")
 	private Boolean active;
 }

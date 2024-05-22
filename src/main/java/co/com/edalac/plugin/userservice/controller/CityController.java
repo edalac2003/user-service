@@ -12,10 +12,10 @@ import co.com.edalac.plugin.userservice.model.dto.response.UserResponse;
 import co.com.edalac.plugin.userservice.service.impl.CityServiceImpl;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 
-@RestController(value = "/city")
-@RequestMapping
+@RestController
+@RequestMapping("/user/city")
 @ApiResponse
-public class CityController extends AbstractController {
+public class CityController {
 
 	@Autowired
 	private CityServiceImpl cityService;
@@ -25,7 +25,7 @@ public class CityController extends AbstractController {
 		cityService.create(cityDTO);
 	}
 	
-	@GetMapping("/findById")
+	@GetMapping("findById/{id}")
 	public UserResponse<CityDTO> findById(Long id) {
 		UserResponse<CityDTO> response = new UserResponse<CityDTO>();
 		try {
@@ -38,7 +38,7 @@ public class CityController extends AbstractController {
 		}
 	}
 	
-	@GetMapping("/findAll")
+	@GetMapping("findAll")
 	public UserResponse<CityDTO> findAll(){
 		UserResponse<CityDTO> response = new UserResponse<CityDTO>();
 		try {
