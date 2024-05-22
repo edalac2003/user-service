@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import co.com.edalac.plugin.userservice.model.dto.ContactTypeDTO;
 import co.com.edalac.plugin.userservice.model.entity.ContactTypeEntity;
 import co.com.edalac.plugin.userservice.repository.ContactTypeRepository;
-import co.com.edalac.plugin.userservice.repository.ContactTypeService;
+import co.com.edalac.plugin.userservice.service.ContactTypeService;
 import co.com.edalac.plugin.userservice.util.exception.UserException;
 
 @Service

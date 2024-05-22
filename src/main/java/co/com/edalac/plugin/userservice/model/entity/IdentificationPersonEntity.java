@@ -22,7 +22,7 @@ public class IdentificationPersonEntity {
 	@Id
 	@Column(name = "id_identification_person")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Long id;
 	
 	@ManyToOne
 	@JoinColumn(columnDefinition = "person_id", insertable = false, updatable = false)

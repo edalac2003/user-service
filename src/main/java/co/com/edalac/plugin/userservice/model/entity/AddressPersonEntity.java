@@ -21,7 +21,7 @@ public class AddressPersonEntity {
 	@Id
 	@Column(name = "id_address_person")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	private Long id;
 	
 	@ManyToOne
 	private PersonEntity person;

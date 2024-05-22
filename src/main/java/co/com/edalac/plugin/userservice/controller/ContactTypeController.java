@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import co.com.edalac.plugin.userservice.model.dto.ContactTypeDTO;
-import co.com.edalac.plugin.userservice.repository.ContactTypeService;
+import co.com.edalac.plugin.userservice.service.ContactTypeService;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 
 @RestController("/contact-type")
