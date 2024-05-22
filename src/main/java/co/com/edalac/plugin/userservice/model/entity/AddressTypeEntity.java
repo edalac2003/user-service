@@ -12,19 +12,15 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
+@Table(name = "address_type")
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "contact_type_master")
-public class ContactTypeEntity {
+public class AddressTypeEntity {
 
 	@Id
-	@Column(name = "id_contact_type")
+	@Column(name = "id_address_type")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
 	private String name;
-	
-	@Column(name = "is_active")
 	private Boolean active;
-	
 }

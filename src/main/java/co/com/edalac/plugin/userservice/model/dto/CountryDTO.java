@@ -2,7 +2,7 @@ package co.com.edalac.plugin.userservice.model.dto;
 
 import java.util.List;
 
-import co.com.edalac.plugin.userservice.model.dto.response.AbstractResponseDTO;
+import co.com.edalac.plugin.userservice.model.dto.response.AbstractDTO;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
@@ -10,7 +10,7 @@ import lombok.NoArgsConstructor;
 @Data
 @EqualsAndHashCode(callSuper = false)
 @NoArgsConstructor
-public class CountryDTO extends AbstractResponseDTO {
+public class CountryDTO extends AbstractDTO {
 
 	private static final long serialVersionUID = -384597677299172552L;
 	

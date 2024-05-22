@@ -14,17 +14,15 @@ import lombok.NoArgsConstructor;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "contact_type_master")
-public class ContactTypeEntity {
+@Table(name = "identification_type_master")
+public class IdentificationTypeEntity {
 
 	@Id
-	@Column(name = "id_contact_type")
+	@Column(name = "id_identification_type")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	
 	private String name;
-	
-	@Column(name = "is_active")
+	private String abbreviation;
 	private Boolean active;
 	
 }

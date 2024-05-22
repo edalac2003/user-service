@@ -7,17 +7,16 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data
-//@Builder
-@EqualsAndHashCode(callSuper = false)
+@EqualsAndHashCode(callSuper=false)
 @NoArgsConstructor
 @AllArgsConstructor
-public class CityDTO extends AbstractDTO {
+public class ContactPersonDTO extends AbstractDTO {
 
-	private static final long serialVersionUID = 9009994347449747019L;
+	private static final long serialVersionUID = 3848567181260115121L;
 	
-	private Long idCity;
-	private String name;
-	private String code;
-	private StateDTO state;
+	private Long id;
+	private PersonDTO person;
+	private ContactTypeDTO contactType;
+	private Boolean master;
 	
 }

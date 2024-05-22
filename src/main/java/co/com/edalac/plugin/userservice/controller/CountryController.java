@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import co.com.edalac.plugin.userservice.model.dto.CountryDTO;
+import co.com.edalac.plugin.userservice.model.dto.response.AbstractDTO;
 import co.com.edalac.plugin.userservice.model.dto.response.UserResponse;
 import co.com.edalac.plugin.userservice.service.impl.CountryServiceImpl;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
@@ -42,11 +43,11 @@ public class CountryController {
 	}
 	
 	@GetMapping("findAll")
-	public UserResponse<List<CountryDTO>> findAll(){
-		UserResponse<List<CountryDTO>> response = new UserResponse<List<CountryDTO>>();
+	public UserResponse<CountryDTO> findAll(){
+		UserResponse<CountryDTO> response = new UserResponse<CountryDTO>();
 		try {
-			response.setData(countryServiceImpl.findAll());
-			return  response;
+			response.setList(countryServiceImpl.findAll());
+			return response;
 		}catch (Exception e) {
 			response.setStatusCode(HttpStatus.INTERNAL_SERVER_ERROR.value());
 			response.setMessage(e.getMessage());

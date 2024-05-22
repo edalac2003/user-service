@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,15 +16,24 @@ import lombok.NoArgsConstructor;
 @Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Table(name = "contact_type_master")
-public class ContactTypeEntity {
+@Table(name = "contact_person")
+public class ContactPersonEntity {
 
 	@Id
-	@Column(name = "id_contact_type")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
+	@Column(name = "id_contact_person")
+	private Long id;
 	
-	private String name;
+	@ManyToOne
+	@JoinColumn(columnDefinition = "person_id")
+	private PersonEntity person;
+	
+	@ManyToOne()
+	@JoinColumn(insertable = false, updatable = false)
+	private ContactTypeEntity contactType;
+	
+	@Column(name = "is_master")
+	private Boolean master;
 	
 	@Column(name = "is_active")
 	private Boolean active;

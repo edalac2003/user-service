@@ -1,28 +1,19 @@
 package co.com.edalac.plugin.userservice.model.dto;
 
-import java.util.List;
-
 import co.com.edalac.plugin.userservice.model.dto.response.AbstractDTO;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 @Data
-@Builder
 @EqualsAndHashCode(callSuper = false)
 @NoArgsConstructor
 @AllArgsConstructor
-public class StateDTO extends AbstractDTO {
+public class AddressTypeDTO extends AbstractDTO {
 
-	private static final long serialVersionUID = -8096086907639532466L;
+	private static final long serialVersionUID = 1L;
 	
-	private Long idState;
+	private Integer id;
 	private String name;
-	private String code;
-	private Long countryId;
-	
-	private List<CityDTO> cities;
-	private CountryDTO country;
 }
