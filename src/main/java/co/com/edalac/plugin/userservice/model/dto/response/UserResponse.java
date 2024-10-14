@@ -2,9 +2,11 @@ package co.com.edalac.plugin.userservice.model.dto.response;
 
 import java.util.List;
 
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 
-@Data
+@Builder
+@AllArgsConstructor
 public class UserResponse<T extends AbstractDTO> {
 
 	private T data;

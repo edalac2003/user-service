@@ -25,6 +25,8 @@ public class PersonDTO extends AbstractDTO{
 	private LocalDate birthdate;
 	private Boolean status;
 	
+	private Long cityId;
+	
 	private CityDTO city = new CityDTO();
 	
 	private List<IdentificationPersonDTO> identifications = new ArrayList<IdentificationPersonDTO>();

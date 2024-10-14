@@ -23,13 +23,15 @@ public class ContactPersonEntity {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id_contact_person")
 	private Long id;
+	private Long personId;
+	private Long contactTypeId;
+	private String value;
 	
 	@ManyToOne
 	@JoinColumn(columnDefinition = "person_id")
 	private PersonEntity person;
 	
-	@ManyToOne()
-	@JoinColumn(insertable = false, updatable = false)
+	@ManyToOne
 	private ContactTypeEntity contactType;
 	
 	@Column(name = "is_master")

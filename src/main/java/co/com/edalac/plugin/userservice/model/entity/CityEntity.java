@@ -23,7 +23,6 @@ public class CityEntity {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "id_city")
 	private Long idCity;
 	private String name;
 	private String code;

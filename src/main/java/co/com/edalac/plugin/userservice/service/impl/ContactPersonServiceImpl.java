@@ -42,5 +42,16 @@ public class ContactPersonServiceImpl implements ContactPersonService {
 		}).toList();
 	}
 
+	@Override
+	public List<ContactPersonDTO> getAllByIdPerson(Long idPerson) {
+		List<ContactPersonEntity> entities = repository.findByPersonId(idPerson);
+		List<ContactPersonDTO> dtos = entities.stream().map(c -> {
+			ModelMapper mapper = new ModelMapper();
+			return mapper.map(c, ContactPersonDTO.class);
+		}).toList();
+		
+		return dtos;
+	}
+
 
 }

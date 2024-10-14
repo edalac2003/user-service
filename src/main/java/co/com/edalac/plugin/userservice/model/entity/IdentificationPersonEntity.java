@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 
 @Data
 @Entity
-@Table(name = "person_identification")
+@Table(name = "identification_person")
 @AllArgsConstructor
 @NoArgsConstructor
 public class IdentificationPersonEntity {
@@ -25,11 +25,11 @@ public class IdentificationPersonEntity {
 	private Long id;
 	
 	@ManyToOne
-	@JoinColumn(columnDefinition = "person_id", insertable = false, updatable = false)
+//	@JoinColumn(columnDefinition = "person_id", insertable = false, updatable = false)
 	private PersonEntity person;
 	
 	@ManyToOne
-	@JoinColumn(columnDefinition = "identification_type_id", insertable = false, updatable = false)
+//	@JoinColumn(columnDefinition = "identification_type_id", insertable = false, updatable = false)
 	private IdentificationTypeEntity identificationType;
 	
 	@Column(name = "is_master")
