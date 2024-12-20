@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RestController;
 import co.com.edalac.plugin.userservice.model.dto.PersonDTO;
 import co.com.edalac.plugin.userservice.model.dto.response.UserResponse;
 import co.com.edalac.plugin.userservice.service.PersonService;
+import io.swagger.v3.oas.annotations.parameters.RequestBody;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 
 @RestController
@@ -18,6 +19,11 @@ public class PersonController {
 
 	@Autowired
 	private PersonService personService;
+	
+	public UserResponse<PersonDTO> create(@RequestBody PersonDTO person){
+		
+		return new UserResponse<PersonDTO>();
+	}
 	
 	@GetMapping("/findby/{id}")
 	public UserResponse<PersonDTO> findById(@PathVariable Long id){
